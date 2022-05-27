@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            rel="stylesheet">
+  
+    <script src=
+"http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" 
+    type="text/javascript">
+  
+    </script>
+  
+    <script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+    </script>
+</head>
+<body>
+    <div class="Rectangle-1">
+      <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="/">Home</a>
+        <a href="/profile" >Profile</a>
+
+    </div>
+          
+          <div id="main">
+            <button class="openbtn" onclick="openNav()"><img src="{% static 'images/Component 17.png' %}" alt=""></button>  
+            
+        <div class="Text-1">
+            Face Attendance
+        </div>
+        <div class="Text-4">
+          Welcome {{ user.name }}
+        </div>
+        <div class="Text-2">
+          <a style="color: #006371; text-decoration:none;"  href="/logout"> LOG OUT </a> 
+        </div>
+        
+        <div class="Group-1">
+            <div class="Rectangle-2">
+              <div class="booth">
+                  <img id= "image" src="{% static 'images/View_hide.png' %}" alt="">      
+                  <video id="video"  autoplay>
+                  </video>
+              </div>
+            </div>
+            <div class="Rectangle-3">
+                <div class="text-right">
+                    <a href="#!" class="btn btn-danger" style="background-color: none;background-color: #efefef;COLOR: #006371;border-color: #efefef; margin-right: 2px; height: 83px;"
+                        onClick="stop()">
+                       <img src="{% static 'images/hide.png' %}" alt="hide"> 
+                    </a>
+                    <a href="#!" class="btn btn-success" style="background-color: none;background-color: #efefef;COLOR: #006371;border-color: #efefef; margin: 0 2px 2px 0;"
+                        onClick="start()">
+                       <img src="{% static 'images/start.png' %}" alt="start"> 
+                    </a>
+                
+                <button class="Text-3" id="snap" style="background-color: none;background-color: #efefef;COLOR: #006371;border-color: #efefef; height: 83px;" onclick="mark_attendence()">
+                    Mark my Attendance
+                </btn>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="csrf_token" value='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+    <canvas id="canvas" style="display:none">
+        <div class="output">
+          <img id="photo" alt="The screen capture will appear in this box.">
+        </div>
+      </canvas>
+
+      <div class="log-container">
+        <div class="logs">
+
+        </div>
+      </div>
+      
+    <script>
+        var stop = function () {
+                var stream = video.srcObject;
+                var tracks = stream.getTracks();
+                for (var i = 0; i < tracks.length; i++) {
+                    var track = tracks[i];
+                    track.stop();
+                }
+                video.srcObject = null;
+                var x = document.getElementById('image');
+                  if (x.style.display === "block") {
+                    x.style.display = "none";
+                  } else {
+                    x.style.display = "block";
+                  }
+            }
+        var start = function () {
+            var video = document.getElementById('video'),
+                vendorUrl = window.URL || window.webkitURL;
+            if (navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(function (stream) {
+                        video.srcObject = stream;
+                    }).catch(function (error) {
+                        console.log("Something went wrong!");
+                    });
+            }
+            var x = document.getElementById('image');
+                  if (x.style.display === "none") {
+                    x.style.display = "block";
+                  } else {
+                    x.style.display = "none";
+                  }
+        }
+
+        function createLog(text){
+          var log = document.createElement('div');
+          var tick = document.createElement('img');
+          tick.src = 'api/static/images/icon-yes.svg';
+          log.className = 'log';
+          log.appendChild (tick);
+          var text2 = document.createElement('p');
+          text2.innerHTML = text;
+          log.appendChild (text2);
+          document.getElementsByClassName('logs')[0].appendChild(log);
+      }
+        
+        var mark_attendence = function () {
+            var csrf_token = document.getElementById("csrf_token").value;
+            var csrf_token_value = JSON.parse(csrf_token)['csrfmiddlewaretoken']
+            var imagebase64data = canvas.toDataURL("image/png"); 
+            imagebase64data = imagebase64data.replace('data:image/png;base64,', ''); 
+            var formdata = new FormData();
+            formdata.append("image",imagebase64data);
+            formdata.append("csrfmiddlewaretoken", csrf_token_value);
+            var requestOptions = {
+            method: 'POST',
+            body: formdata,
+            redirect: 'follow'
+            };
+            fetch("/image_recognition", requestOptions)
+            .then(response => response.text())
+            .then(result => {
+              //console.log(result);
+              var msg = JSON.parse(result).msg;
+              if (JSON.parse(result).name != "none"){
+                console.log(JSON.parse(result).name);
+                createLog(msg);
+              }
+            })
+            .catch(error => console.log('error', error));
+        }
+        $(function () {
+            start();
+        });  
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        var video = document.getElementById('video');
+        canvas.height = 500;
+        canvas.width = 650;
+        document.getElementById("snap").addEventListener("click", function() {
+            context.drawImage(video, 0, 0, 1080, 720,0, 0, 1080, 720);
+        });
+    </script>
+        <script>
+            const img = document.querySelector("#screenshot img");
+            const video2 = document.querySelector("#screenshot video");
+            
+            const canvas2 = document.createElement("canvas");
+          
+            function handleSuccess(stream) {
+              screenshotButton.disabled = false;
+              video2.srcObject = stream;
+            }
+            </script>
+            <script>
+                function myFunction() {
+                  var x = document.getElementById("myDIV");
+                  if (x.style.display === "none") {
+                    x.style.display = "block";
+                  } else {
+                    x.style.display = "none";
+                  }
+                }
+                </script>
+        <script src="{%static 'js/navbar.js'%}"></script>
+</body>
+</html>

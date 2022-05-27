@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+    {% load static %}
+    <div class="Rectangle-1">
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="/">Home</a>
+            <a href="/profile" class="active">Profile</a>
+        </div>
+          
+        <div id="main">
+            <button class="openbtn" onclick="openNav()"><img src="{% static 'images/Component 17.png'%}" alt=""></button>  
+        <div class="Text-1">
+          <a  href="/"> Face Attendance </a>
+        </div>
+        <div class="Text-4">
+            Welcome {{ user.name }}
+        </div>
+        <div class="Text-2">
+          <a href="/logout"> LOG OUT </a> 
+        </div>
+        <div class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="{{ user.profile_img }}" alt="" srcset="" >
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h5>
+                                        {{ user.name }}
+                                    </h5>
+                                    <h6>
+                                        Student {{user.class_sec}}
+                                    </h6>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="editprofile" class="profile-edit-btn">
+                            <!-- <input type="submit"  name="btnAddMore" value="Edit Profile"/> -->
+                            Edit-Profile</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        </div>
+                    </div> 
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ user.name }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ user.email }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Phone</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ user.phone }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Address</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p> {{user.address}} </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Download Attendance Report</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button onclick="download_csv_file()" class="download_button">Download</button>
+                                        <input type="hidden" id="csrf_token" value='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>           
+        </div>
+        </div>
+    </div>
+    <script src="{%static 'js/profile.js'%}"> </script>
+    <script src="{%static 'js/navbar.js'%}"></script>
+
+</body>
+</html>

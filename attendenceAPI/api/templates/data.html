@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendance Report</title>
+    <link rel="stylesheet" href="{% static 'css/graph.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+
+    <style>
+      #chart {
+        max-width: 650px;
+        margin: 35px auto;
+      }
+    </style>
+
+    <script>
+      window.Promise ||
+        document.write(
+          '<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"><\/script>'
+        );
+      window.Promise ||
+        document.write(
+          '<script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20171210/classList.min.js"><\/script>'
+        );
+      window.Promise ||
+        document.write(
+          '<script src="https://cdn.jsdelivr.net/npm/findindex_polyfill_mdn"><\/script>'
+        );
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <script>
+      var _seed = 42;
+      Math.random = function () {
+        _seed = (_seed * 16807) % 2147483647;
+        return (_seed - 1) / 2147483646;
+      };
+    </script>
+  </head>
+  <body>
+    <div class="Rectangle-1">
+      <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="/monitor">Home</a>
+        <a href="/data" class="active">Class Report</a>
+      </div>
+
+      <div id="main">
+        <button class="openbtn" onclick="openNav()">
+          <img src="{% static 'images/Component 17.png'%}" alt="" />
+        </button>
+        <div>
+          <div class="Text-1">
+            <a href="/"> Face Attendance </a>
+          </div>
+          <div class="Text-4">Welcome {{user.username}}</div>
+          <div class="Text-2">
+            <a href="/admin/logout"> LOG OUT </a>
+          </div>
+        </div>
+        <div class="Group-1">
+          <div class="calendar">
+            <input
+              type="hidden"
+              id="csrf_token"
+              value='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'
+            />
+            <input
+              type="month"
+              id="start"
+              name="start"
+              onchange="getRequest()"
+              min="2000-03"
+              value="{{date}}"
+            />
+            <button onclick="download_csv_file()">
+              <div class="img">
+                <img src="{%static 'images/download.png'%}" alt="download" />
+              </div>
+            </button>
+          </div>
+          <div class="Rectangle-2">
+            <div id="chart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="{%static 'js/navbar.js'%}"></script>
+
+    <script src="{%static 'js/data.js'%}"></script>
+  </body>
+</html>

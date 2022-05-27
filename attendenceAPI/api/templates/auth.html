@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="Rectangle-1">
+        <div class="Text-1">
+            <a href=""> Face Attendance </a>
+        </div>
+        <div class="Text-2">
+            <a href="admin.html"> LOG OUT </a>
+        </div>
+        <div class="Rectangle-6">
+            <div class="signin">
+                Log In
+            <div class="username">
+                E-mail <br>
+                <input type="email" id="input4">
+            </div> 
+            <div class="password">
+                Password <br>
+                <input type="password" id="input5">
+            </div> 
+            <input type="hidden" id="csrf_token_2" value='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+            <button class="login" onclick=submitLoginForm()>
+                LOG IN
+            </button>  
+            </div>
+        </div>
+        <div class="Rectangle-7">
+            <div class="signin">
+                Sign Up
+            <div class="usernamesu">
+                Username <br>
+                <input type="text" id="input6">
+            </div> 
+            <div class="email">
+                E-mail <br>
+                <input type="email" id="input1">
+            </div> 
+            <div class="passwordsu">
+                Password <br>
+                <input type="password" id="input2">
+            </div> 
+            <div class="passwordretype">
+                Retype Password
+                <input type="password" id="input3">
+            </div>
+            <input type="hidden" id="csrf_token" value='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+            <button class="signup" onclick=submitform1()>
+                <a href="#">SIGN UP</a>
+            </button>  
+            </div>
+        </div>
+    </div>
+    <script src="{%static 'js/auth.js'%}"></script>
+</body>
+</html>

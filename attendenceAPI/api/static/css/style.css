@@ -1,0 +1,630 @@
+@import url("https://fonts.googleapis.com/css2?family=Handlee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Handlee&family=Inder&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Handlee&family=Inder&family=Nunito:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400&family=Handlee&family=Inder&family=Nunito:wght@200&display=swap");
+
+.Rectangle-1 {
+  position: absolute;
+  width: 94%;
+  height: 92%;
+  left: 3%;
+  top: 4%;
+  margin: auto;
+  background: radial-gradient(
+      66.54% 101.05% at 49.32% 54.74%,
+      #3485a8 0%,
+      rgba(0, 240, 255, 0) 87.4%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 15px;
+}
+.Text-1 {
+  display: flex;
+  margin-top: 20px;
+  font-family: "Handlee";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 43px;
+
+  color: #006371;
+}
+.Text-2 {
+  position: absolute;
+  height: 17px;
+  right: 5%;
+  top: 62px;
+  font-family: "Inder";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 20px;
+  color: #006371;
+}
+.Group-1 {
+  width: 60%;
+  height: 63%;
+  left: 2%;
+  top: 16%;
+  margin: auto;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+.Rectangle-2 {
+  left: 25%;
+  top: 141px;
+  background: rgba(234, 234, 234, 0.73);
+  border-radius: 15px;
+  display: flex;
+}
+.Rectangle-3 {
+  display: flex;
+  align-self: flex-end;
+  background: radial-gradient(
+      64.06% 300.59% at 53.09% 45.31%,
+      rgba(217, 217, 217, 0.39) 0%,
+      rgba(217, 217, 217, 0) 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.13));
+  border-radius: 5px;
+}
+.Text-3 {
+  margin: auto;
+  width: 98.39px;
+  padding: 18px 2px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15px;
+  text-align: center;
+  line-height: normal;
+  color: #006371;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+.text-right {
+  display: flex;
+  flex-direction: right;
+}
+.booth {
+  max-height: 62vh;
+  width: 100%;
+  padding: 10px;
+}
+.card {
+  background-color: #eaeaea;
+  border: none;
+}
+.btn-danger {
+  background-color: none;
+  background-color: #efefef;
+  color: #006371;
+  border-color: #efefef;
+  margin-right: 2px;
+  height: 83px;
+}
+.btn-danger:hover {
+  background-color: none;
+  background-color: #efefef;
+  color: #006371;
+  border-color: #efefef;
+}
+
+.btn-success {
+  background-color: none;
+  background-color: #efefef;
+  color: #006371;
+  border-color: #efefef;
+  margin: 0 2px 2px 0;
+}
+.btn-success:hover {
+  background-color: none;
+  background-color: #efefef;
+  color: #006371;
+  border-color: #efefef;
+}
+#snap {
+  background-color: none;
+  background-color: #efefef;
+  color: #006371;
+  border-color: #efefef;
+  height: 83px;
+}
+#video {
+  width: 100%;
+  max-height: 60vh;
+}
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #efefef;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #9cc3d4;
+  padding: 10px 15px;
+  border: none;
+  position: fixed;
+  left: 3%;
+  top: 50%;
+  padding-left: 0%;
+}
+#main {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+#image {
+  position: absolute;
+  padding: 10% 23%;
+}
+
+.Group-2 {
+  position: absolute;
+  width: 80%;
+  height: 440.55px;
+  left: 162px;
+  top: 141px;
+  background: #c0d8df;
+}
+.Rectangle-4 {
+  position: absolute;
+  width: 100%;
+  height: 34px;
+  background: #b1eff6;
+}
+.Rectangle-5 {
+  position: absolute;
+  width: 780px;
+  height: 364px;
+  left: 20px;
+  top: 48px;
+  font-family: "Fira Code";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  color: #006371;
+}
+.Log {
+  font-family: "Inder";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 8px;
+  color: #006371;
+}
+.Rectangle-6 {
+  position: absolute;
+  width: 25%;
+  height: 65%;
+  left: 23%;
+  top: 165px;
+
+  background: rgba(234, 234, 234, 0.73);
+  border-radius: 15px;
+}
+.Rectangle-7 {
+  position: absolute;
+  width: 25%;
+  height: 65%;
+  right: 23%;
+  top: 165px;
+  background: rgba(234, 234, 234, 0.73);
+  border-radius: 15px;
+}
+.signin {
+  font-family: "Inder";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #006371;
+  margin-top: 20px;
+}
+.username {
+  font-family: "Inder";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #006371;
+  margin-top: 130px;
+  margin-bottom: 30px;
+  width: 80%;
+}
+.password {
+  font-family: "Inder";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #006371;
+  width: 80%;
+}
+input {
+  box-shadow: inset 3px 4px 4px rgba(54, 135, 170, 0.15);
+  background: #e5e5e5;
+  border-radius: 15px;
+  border-color: #e5e5e5;
+  height: 30px;
+  width: 100%;
+  font-size: 17px;
+  font-family: "Inder";
+  overflow: visible;
+  margin: 0;
+  line-height: inherit;
+}
+.login {
+  background: #63bdd2;
+  border-radius: 15px;
+  font-family: "Inder";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  color: #006371;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+  width: 30%;
+  height: 40px;
+}
+.usernamesu {
+  font-family: "Inder";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #006371;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  width: 80%;
+}
+.passwordsu {
+  font-family: "Inder";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #006371;
+  width: 80%;
+  margin-bottom: 30px;
+}
+.passwordretype {
+  font-family: "Inder";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #006371;
+  width: 80%;
+}
+.signup {
+  background: #63bdd2;
+  border-radius: 15px;
+  font-family: "Inder";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  color: #006371;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  width: 30%;
+  height: 40px;
+}
+a {
+  color: #006371;
+  text-decoration: none;
+}
+a:hover {
+  color: #006371;
+  text-decoration: none;
+}
+.active {
+  font-weight: bolder;
+}
+.sidebar a {
+  color: #006371;
+}
+.sidebar a:hover {
+  transform: scale(1.1);
+  color: #006371;
+}
+.emp-profile {
+  padding: 3%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  border-radius: 0.5rem;
+  background: #fff;
+  font-family: "Inder";
+}
+.profile-img {
+  text-align: center;
+}
+.profile-img .file {
+  position: relative;
+  overflow: hidden;
+  margin-top: -20%;
+  width: 70%;
+  border: none;
+  border-radius: 0;
+  font-size: 15px;
+  background: #212529b8;
+}
+.profile-img .file input {
+  position: absolute;
+  opacity: 0;
+  right: 0;
+  top: 0;
+}
+.profile-head h5 {
+  color: #333;
+}
+.profile-head h6 {
+  color: #0062cc;
+}
+.profile-edit-btn {
+  border: none;
+  border-radius: 1.5rem;
+  width: 70%;
+  padding: 7px;
+  font-weight: 600;
+  color: #6c757d;
+  cursor: pointer;
+  box-shadow: inset 3px 4px 4px rgba(54, 135, 170, 0.15);
+  background: #e5e5e5;
+  border-radius: 15px;
+  border-color: #e5e5e5;
+  height: 30px;
+  width: 100%;
+  font-size: 17px;
+  font-family: "Inder";
+}
+.proile-rating {
+  font-size: 12px;
+  color: #818182;
+  margin-top: 5%;
+}
+.proile-rating span {
+  color: #495057;
+  font-size: 15px;
+  font-weight: 600;
+}
+.profile-head .nav-tabs {
+  margin-top: 2rem;
+  font-size: 1.3rem;
+}
+.profile-head .nav-tabs .nav-link {
+  font-weight: 600;
+  border: none;
+}
+.profile-head .nav-tabs .nav-link.active {
+  border: none;
+  border-bottom: 1px solid #dee2e6;
+}
+.profile-work {
+  padding: 14%;
+  margin-top: -15%;
+}
+.profile-work p {
+  font-size: 12px;
+  color: #818182;
+  font-weight: 600;
+  margin-top: 10%;
+}
+.profile-work a {
+  text-decoration: none;
+  color: #495057;
+  font-weight: 600;
+  font-size: 14px;
+}
+.profile-work ul {
+  list-style: none;
+}
+.profile-tab label {
+  font-weight: 600;
+}
+.profile-tab p {
+  font-weight: 600;
+  color: #0062cc;
+}
+.form-control:focus {
+  box-shadow: none;
+  border-color: #ba68c8;
+}
+
+.profile-button {
+  box-shadow: none;
+  border: none;
+  width: 30%;
+}
+
+.profile-button:hover {
+  background: #e5e5e5;
+  color: #006371;
+}
+.labels {
+  font-size: 11px;
+}
+
+.add-experience:hover {
+  background: #ba68c8;
+  color: #fff;
+  cursor: pointer;
+  border: solid 1px #ba68c8;
+}
+.profile-head h5 {
+  font-size: 2.25rem;
+}
+.profile-img img {
+  width: 40%;
+  height: 100%;
+}
+h6 {
+  font-size: 1.5rem;
+}
+.mt-5 {
+  margin-top: 0rem;
+}
+.Text-4 {
+  position: absolute;
+  width: 72px;
+  height: 17px;
+  right: 15%;
+  top: 62px;
+  font-family: "Inder";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 22px;
+  color: #006371;
+  text-transform: uppercase;
+}
+
+.profile-img img {
+  object-fit: cover;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+}
+.email {
+  font-family: "Inder";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #006371;
+  width: 80%;
+  margin-bottom: 30px;
+}
+
+.download_button {
+  border: 0px;
+  background: #f0f8ff00;
+  color: #0062cc;
+}
+
+.log-container {
+  position: fixed;
+  bottom: 4%;
+  left: 5%;
+  max-height: 150px;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.log-container::-webkit-scrollbar {
+  display: none;
+}
+
+.logs {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.log {
+  border-radius: 10px;
+  background: #dcf8dd;
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 10px #ccc;
+  display: flex;
+}
+.log p {
+  margin: 0px;
+}
+.booths {
+  height: 62vh;
+  width: 100%;
+  padding: 10px;
+}
+.calendar {
+  width: 22%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 3px;
+}
+.img img {
+  width: 30px;
+  margin-left: 3px;
+}
+tspan {
+  font-size: 15px;
+  font-family: "Inder";
+}
+.welcome{
+    position: absolute;
+    width: 72px;
+    height: 17px;
+    right: 25%;
+    top: 62px;
+    font-family: "Inder";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 22px;
+    color: #006371;
+    text-transform: uppercase;
+}
+.calendar button{
+  background: #f0f8ff00;
+  border: 0px;
+}
+.calendar input{
+  padding: 5px;
+}
