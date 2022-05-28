@@ -109,17 +109,17 @@ python manage.py runserver
 <img src="./images/Frame 4.svg" />
 </div>
 
-- This system have 2 type of user
+- This system have 2 types of user
 - Normal user can mark their attendance, but before that 
-  - User have to signup
-  - User have to login using their email and password
-  - Admin have to verify the user and add his/her training image 
-  - Admin have to restart the server using the reboot button in the admin home page
-    - There are 2 image fields in the Attandee table , one is for the training image and other is for the user profile image
+  - User has to signup
+  - User has to login using their email and password
+  - Admin has to verify the user and add his/her training image 
+  - Admin has to restart the server using the reboot button in the admin home page
+    - There are 2 image fields in the Attendee table , one is for the training image and other is for the user profile image
     - user can update and add profile image 
-    - For traing image only admin have the permission to update that and reload the server
+    - For trainingg image only admin has the permission to update that and reload the server
 
-- Admin home page have monitor attendance option
+- Admin home page has monitor attendance option
   - Admin can monitor all the attendees in real time
   - Admin can download attendance report in CSV format for all user for the given year & month
   - Admin can retrain newly added image data
