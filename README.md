@@ -61,7 +61,7 @@
 #### [ step 1 ] :
 - clone the repository
 ``` 
-git clone https://github.com/padmaja2305/face-recognition
+git clone https://github.com/padmaja2305/engage-face_recognition.git
 ```
 #### [ step 2 ] :
 - Open terminal and navigate to the directory
