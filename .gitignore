@@ -1,0 +1,4 @@
+/venv
+*/__pycache__/
+attendenceAPI/attendenceAPI/__pycache__/
+*.pyc

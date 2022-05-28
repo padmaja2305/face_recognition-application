@@ -2,9 +2,8 @@
 
 # Face-Recognition
 ## Attendance System 
-
-<div style="width:25%;">
-<img src="./images/screen.png" />
+<div>
+<img src="./images/screen.png" width="200px"/>
 </div>
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
@@ -25,29 +24,39 @@
 
 
 <div >
-  <div align="center">Link of Figma design for SignIn-SignUp page : 
+  <div align="center">Link of Figma design : 
   <a href="https://www.figma.com/file/n6zN6WsPpC3Fq7KmB8zADR/face-recognition?node-id=0%3A1"> @Figma </a> </div>
 </div>
 
 #
 ## Features
-
-1) Password protection for new person registration.
-2) Creates/Updates CSV file for deatils of students on registration.
-3) Creates a new CSV file everyday for attendance and marks attendance with proper date and time.
-4) Displays live attendance updates for the day on the main screen of the admin with the name and timestamp.
+1) Detects face in Real time and Create attendance Logs
+2) Mark my attendance option for students/attendees
+3) Password authentication for user signup and login
+4) User can download attendance report in CSV format for current month
+5) Profile Update option for user
+6) Monitor Attendees feature for admin user to monitor all the attendees in real time
+7) Admin can add new user to the system and upload training image from admin panel
+8) Report Download option for admin user to download attendance report in CSV format for all user for the given year & month
+9) Data visualization for attendance report for the current month
+10) Option for admin to retrain newly added image data
+11) Attendance log view feature with filter and pagination for Admin user
 
 #
 ## Installation
 
-### Method 1 :
 > Running development server in Local Mechine 
+> 
 
-#### For Linux
+
 #### [ Pre-requisite ] : 
 - Python 3.6 or above
 - dlib library
 - python-virtualenv
+
+##### Some reffernence to install dlib :
+- [dlib installation in ubuntu](https://kumarvinay.com/installing-dlib-library-in-ubuntu/)
+- [dlib installation in windows](https://medium.com/analytics-vidhya/how-to-install-dlib-library-for-python-in-windows-10-57348ba1117f#:~:text=First%20of%20all%2C%20you%20need%20to%20install%20CMake%20library.&text=Then%2C%20you%20can%20install%20dlib%20library%20using%20pip%20install%20.&text=After%20passing%20enter%2C%20you%20laptop,run%20the%20C%2C%20C%2B%2B%20Compiler.)
 
 #### [ step 1 ] :
 - clone the repository
@@ -81,7 +90,10 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 #### [ step 7 ] :
-- Open browser and navigate to http://localhost:8000/
+- Open browser and navigate to http://127.0.0.1:8000/
+
+> Hosted on Digital Ocean
+- Browse to https://padmaja.live
 
 #
 ## Uses
@@ -97,22 +109,38 @@ python manage.py runserver
 <img src="./images/Frame 4.svg" />
 </div>
 
+- This system have 2 type of user
+- Normal user can mark their attendance, but before that 
+  - User have to signup
+  - User have to login using their email and password
+  - Admin have to verify the user and add his/her training image 
+  - Admin have to restart the server using the reboot button in the admin home page
+    - There are 2 image fields in the Attandee table , one is for the training image and other is for the user profile image
+    - user can update and add profile image 
+    - For traing image only admin have the permission to update that and reload the server
+
+- Admin home page have monitor attendance option
+  - Admin can monitor all the attendees in real time
+  - Admin can download attendance report in CSV format for all user for the given year & month
+  - Admin can retrain newly added image data
+  - Admin can view attendance log view feature with filter and pagination for Admin user
+
+
 #
 ## Directory Structure
  <div align=center>
 <img src="./images/engage.png" />
 </div>
 
+
+
 #
-## Schematics
-<div align=center>
-<img src="./images/2.gif"/>
-<br>
-<br>
-<img src="./images/1.gif"/>
-<br>
-<br>
-<img src="./images/3.gif"/>
-</div>
+## Demo
 
-
+![1](https://user-images.githubusercontent.com/72041195/170764279-9df8ca3e-cf08-4e2e-a608-a49f43777db9.gif)
+<br>
+<br>
+![2](https://user-images.githubusercontent.com/72041195/170764286-00492cfa-d5b0-4205-95fb-34f00ce051fe.gif)
+<br>
+<br>
+![3](https://user-images.githubusercontent.com/72041195/170764383-9cee34ed-75e1-410d-9af3-414ac998f5e8.gif)

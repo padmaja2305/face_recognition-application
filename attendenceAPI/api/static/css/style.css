@@ -273,8 +273,8 @@
   font-size: 18px;
   line-height: 22px;
   color: #006371;
-  margin-top: 130px;
-  margin-bottom: 30px;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
   width: 80%;
 }
 .password {
@@ -311,7 +311,7 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 120px;
+  margin-top: 4rem;
   width: 30%;
   height: 40px;
 }
@@ -627,4 +627,143 @@ tspan {
 }
 .calendar input{
   padding: 5px;
+}
+@media screen and (max-width: 995px), 
+       screen and (max-height: 860px) {
+        .Rectangle-6 {
+          position: absolute;
+          width: 25%;
+          height: 65%;
+          left: 23%;
+          top: 6rem;
+          
+          background: rgba(234, 234, 234, 0.73);
+          border-radius: 15px;
+          }
+          .Rectangle-7 {
+          position: absolute;
+          width: 25%;
+          height: 65%;
+          right: 23%;
+          top: 6rem;
+          background: rgba(234, 234, 234, 0.73);
+          border-radius: 15px;
+          }
+          .signin {
+            font-family: "Inder";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1.5rem;
+            line-height: 45px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #006371;
+            margin-top: 0.7rem;
+            }
+            .username {
+            font-family: "Inder";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            color: #006371;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            width: 80%;
+            }
+            .password {
+            font-family: "Inder";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            color: #006371;
+            width: 80%;
+            }
+            input {
+            box-shadow: inset 3px 4px 4px rgba(54, 135, 170, 0.15);
+            background: #e5e5e5;
+            border-radius: 15px;
+            border-color: #e5e5e5;
+            height: 20px;
+            width: 100%;
+            font-size: 0.7rem;
+            font-family: "Inder";
+            overflow: visible;
+            margin: 0;
+            line-height: inherit;
+            }
+            .login {
+            background: #63bdd2;
+            border-radius: 15px;
+            font-family: "Inder";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 22px;
+            color: #006371;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 4rem;
+            width: 30%;
+            height: 2rem;
+            }
+            .usernamesu {
+            font-family: "Inder";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 22px;
+            color: #006371;
+            margin-top: 0rem; 
+            margin-bottom: 1rem;
+            width: 80%;
+            }
+            .passwordsu {
+            font-family: "Inder";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 22px;
+            color: #006371;
+            width: 80%;
+            margin-bottom: 1rem;
+            }
+            .passwordretype {
+            font-family: "Inder";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 22px;
+            color: #006371;
+            width: 80%;
+            }
+            .signup {
+            background: #63bdd2;
+            border-radius: 15px;
+            font-family: "Inder";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 22px;
+            color: #006371;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+            width: 30%;
+            height: 2rem;
+            }
+            .email {
+              font-family: "Inder";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 1rem;
+              line-height: 22px;
+              color: #006371;
+              width: 80%;
+              margin-bottom: 1rem;
+              }
 }
