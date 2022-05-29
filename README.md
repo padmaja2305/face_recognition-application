@@ -98,8 +98,8 @@ python manage.py runserver
 <br>
 
 ### Admin Credentials
-    Username:padmaja
-    Password:230514
+    Username:admin
+    Password:msengage
 #
 ## Uses
 1) Mark attendance easily by using face recognition api.
