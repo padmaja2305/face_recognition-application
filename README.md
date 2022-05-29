@@ -66,7 +66,7 @@ git clone https://github.com/padmaja2305/engage-face_recognition.git
 #### [ step 2 ] :
 - Open terminal and navigate to the directory
 ```
-cd face-recognition
+cd engage-face_recognition
 ```
 #### [ step 3 ] :
 - Create virtual environment
@@ -82,7 +82,7 @@ source venv/bin/activate
 #### [ step 5 ] :
 - Install dependencies
 ```
-pip install -r requirements.txt
+pip install -r requirment.txt
 ```
 #### [ step 6 ] :
 - Run the server
