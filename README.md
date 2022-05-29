@@ -95,6 +95,11 @@ python manage.py runserver
 > Hosted on Digital Ocean
 - Browse to https://padmaja.live
 
+<br>
+
+### Admin Credentials
+    Username:padmaja
+    Password:230514
 #
 ## Uses
 1) Mark attendance easily by using face recognition api.
