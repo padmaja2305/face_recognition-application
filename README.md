@@ -93,8 +93,8 @@ python manage.py runserver
 #### [ step 7 ] :
 - Open browser and navigate to http://127.0.0.1:8000/
 
-> Hosted on Digital Ocean
-- Browse to https://padmaja.live
+<!-- > Hosted on Digital Ocean
+- Browse to https://padmaja.live -->
 
 <br>
 
